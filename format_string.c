@@ -24,6 +24,8 @@ int* format_string(char *s)
 		return (NULL);
 
 	posformat = malloc(sizeof(int) * _strlen(s));
+	if (posformat == NULL)
+		return (NULL);
 	while (s[i])
 	{
 		exitflag = 0;
@@ -60,8 +62,11 @@ int main()
 {
 	int *posformat;
 	posformat = format_string("ab %s t %d %c y%c");
-	printf("%d, %d", posformat[0], posformat[1]);
-	free(posformat);
+	if (posformat != NULL)
+	{
+		printf("%d, %d", posformat[0], posformat[1]);
+		free(posformat);
+	}
 
 	return 0;
 }
