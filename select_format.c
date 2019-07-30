@@ -14,6 +14,7 @@ int select_format(char format, va_list args)
 {
 	char *result;
 	int size = 0;
+	int numero = 0;
 
 	switch (format)
 	{
@@ -25,8 +26,7 @@ int select_format(char format, va_list args)
 		result = print_string(args);
 		if (result == NULL)
 		{
-			_puts("(null)");
-			size = 6;
+			_puts("(null)"), size = 6;
 			break;
 		}
 		_puts(result);
@@ -35,8 +35,15 @@ int select_format(char format, va_list args)
 	case '%':
 		_putchar('%');
 		size = 1;
-	case 'd' : case 'i':
-		size = print_integer_d(va_arg(args, int));
+	case 'd': case 'i':
+		numero = (va_arg(args, int));
+		if (numero == NULL)
+		{
+			_putchar('0');
+			size = 1;
+			break;
+		}
+		size = print_integer_d(numero;
 		break;
 	default:
 		_putchar('%');
