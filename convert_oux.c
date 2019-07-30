@@ -11,7 +11,7 @@ int convert(unsigned int num, char s)
 {
 	static const char Representation[] = "0123456789ABCDEF";
 	static const char representation[] = "0123456789abcdef";
-	static char buffer[50];
+	static char buffer[200];
 	char *ptr;
 	int size = 0;
 	int base = 0;
