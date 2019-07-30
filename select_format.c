@@ -35,6 +35,7 @@ int select_format(char format, va_list args)
 	case '%':
 		_putchar('%');
 		size = 1;
+		break;
 	case 'd': case 'i':
 		numero = va_arg(args, int);
 		if (numero == 0)

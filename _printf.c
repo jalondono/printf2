@@ -28,7 +28,8 @@ int _printf(const char *format, ...)
 			if (format[i + 1] != '\0')
 			{
 				value = select_format(format[i + 1], args);
-				j = value + j, i++;
+				j = value + j;
+				i++;
 			}
 			else
 				return (-1);
