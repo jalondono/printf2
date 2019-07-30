@@ -36,14 +36,14 @@ int select_format(char format, va_list args)
 		_putchar('%');
 		size = 1;
 	case 'd': case 'i':
-		numero = (va_arg(args, int));
-		if (numero == NULL)
+		numero = va_arg(args, int);
+		if (numero == 0)
 		{
 			_putchar('0');
 			size = 1;
 			break;
 		}
-		size = print_integer_d(numero;
+		size = print_integer_d(numero);
 		break;
 	default:
 		_putchar('%');
