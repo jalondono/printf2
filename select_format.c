@@ -25,7 +25,7 @@ int select_format(char format, va_list args)
 		result = print_string(args);
 		if (result == NULL)
 		{
-			_puts("(NULL)");
+			_puts("(null)");
 			size = 6;
 			break;
 		}
