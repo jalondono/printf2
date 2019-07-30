@@ -47,9 +47,7 @@ int select_format(char format, va_list args)
 		size = print_integer_d(numero);
 		break;
 	default:
-		_putchar('%');
-		_putchar(format);
-		size = 2;
+		_putchar('%'), _putchar(format), size = 2;
 		break;
 	}
 	return (size);
