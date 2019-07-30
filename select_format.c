@@ -35,9 +35,8 @@ int select_format(char format, va_list args)
 	case '%':
 		_putchar('%');
 		size = 1;
-	case 'd':
-		break;
-	case 'i':
+	case 'd' : case 'i':
+		size = print_integer_d(va_arg(args, int));
 		break;
 	default:
 		_putchar('%');
