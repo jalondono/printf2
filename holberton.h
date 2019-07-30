@@ -10,4 +10,5 @@ int _strlen(char *s);
 int *_memcpy(int *dest, int *src, unsigned int n);
 int *format_string(char *s);
 int print_integer_d(int number);
+int convert(unsigned int num, char s);
 #endif

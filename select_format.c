@@ -33,18 +33,19 @@ int select_format(char format, va_list args)
 		size = _strlen(result);
 		break;
 	case '%':
-		_putchar('%');
-		size = 1;
+		_putchar('%'), size = 1;
 		break;
 	case 'd': case 'i':
 		numero = va_arg(args, int);
 		if (numero == 0)
 		{
-			_putchar('0');
-			size = 1;
+			_putchar('0'), size = 1;
 			break;
 		}
 		size = print_integer_d(numero);
+		break;
+	case 'x': case 'X': case 'o': case 'u':
+		size = convert(va_arg(args, unsigned int), format);
 		break;
 	default:
 		_putchar('%'), _putchar(format), size = 2;
