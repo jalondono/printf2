@@ -42,6 +42,7 @@ int select_format(char format, va_list args)
 	default:
 		_putchar('%');
 		_putchar(format);
+		size = 2;
 		break;
 	}
 	return (size);
