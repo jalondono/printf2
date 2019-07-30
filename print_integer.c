@@ -8,20 +8,27 @@
 int print_integer_d(int number)
 {
 	int result = 0;
+	unsigned int aux = 0;
+	int flag = 0;
 
 	if (number < 0)
 	{
 		_putchar('-');
-		number = -number;
+		aux = -number;
+		flag = 1;
 	}
-	if (number / 10)
-		print_integer_d(number / 10);
-	_putchar(number % 10 + '0');
-
-	while (number / 10 > 0)
+	else
+		aux = number;
+	if (aux / 10)
 	{
-		number = number / 10;
+		print_integer_d(aux / 10);
+	}
+	_putchar(aux % 10 + '0');
+
+	while (aux / 10 > 0)
+	{
+		aux = aux / 10;
 		result++;
 	}
-	return (result + 1);
+	return (result + 1 + flag);
 }
